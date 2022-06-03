@@ -1,0 +1,1404 @@
+04-28 18:40:40 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOEMRNUMBER IN (103,11"; expected ")"; SQL statement:
+SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM "PUBLIC"."CUSTOMERS"
+WHERE CUSTOEMRNUMBER IN (103,11 [42001-131]
+04-28 18:40:52 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Column "CUSTOEMRNUMBER" not found; SQL statement:
+SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM "PUBLIC"."CUSTOMERS"
+WHERE CUSTOEMRNUMBER = 103 [42122-131]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:316)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:126)
+	at org.h2.expression.Comparison.optimize(Comparison.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:717)
+	at org.h2.command.Parser.prepareCommand(Parser.java:224)
+	at org.h2.engine.Session.prepareLocal(Session.java:420)
+	at org.h2.engine.Session.prepareCommand(Session.java:381)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1070)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:70)
+	at org.pentaho.di.core.database.Database.openQuery(Database.java:1761)
+	at org.pentaho.di.trans.steps.tableinput.TableInput.doQuery(TableInput.java:236)
+	at org.pentaho.di.trans.steps.tableinput.TableInput.processRow(TableInput.java:140)
+	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:62)
+	at java.lang.Thread.run(Thread.java:748)
+04-28 18:41:23 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Column "CUSTOEMRNUMBER" not found; SQL statement:
+SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM "PUBLIC"."CUSTOMERS"
+WHERE CUSTOEMRNUMBER = 103 [42122-131]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:316)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:126)
+	at org.h2.expression.Comparison.optimize(Comparison.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:717)
+	at org.h2.command.Parser.prepareCommand(Parser.java:224)
+	at org.h2.engine.Session.prepareLocal(Session.java:420)
+	at org.h2.engine.Session.prepareCommand(Session.java:381)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1070)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:71)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:233)
+	at org.pentaho.di.core.database.Database.getQueryFieldsFallback(Database.java:2535)
+	at org.pentaho.di.core.database.Database.getQueryFields(Database.java:2416)
+	at org.pentaho.di.trans.steps.tableinput.TableInputMeta.getFields(TableInputMeta.java:267)
+	at org.pentaho.di.trans.TransMeta.getThisStepFields(TransMeta.java:2054)
+	at org.pentaho.di.trans.TransMeta.getStepFields(TransMeta.java:1872)
+	at org.pentaho.di.trans.TransMeta.getStepFields(TransMeta.java:1769)
+	at org.pentaho.di.trans.steps.tableinput.TableInputMeta.updateCachedRowMeta(TableInputMeta.java:340)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog.ok(TableInputDialog.java:566)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog.access$400(TableInputDialog.java:79)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog$12.handleEvent(TableInputDialog.java:417)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog.open(TableInputDialog.java:463)
+	at org.pentaho.di.ui.spoon.delegates.SpoonStepsDelegate.editStep(SpoonStepsDelegate.java:120)
+	at org.pentaho.di.ui.spoon.Spoon.editStep(Spoon.java:8854)
+	at org.pentaho.di.ui.spoon.trans.TransGraph.editStep(TransGraph.java:3287)
+	at org.pentaho.di.ui.spoon.trans.TransGraph.mouseDoubleClick(TransGraph.java:785)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.pentaho.di.ui.spoon.Spoon.readAndDispatch(Spoon.java:1405)
+	at org.pentaho.di.ui.spoon.Spoon.waitForDispose(Spoon.java:7989)
+	at org.pentaho.di.ui.spoon.Spoon.start(Spoon.java:9371)
+	at org.pentaho.di.ui.spoon.Spoon.main(Spoon.java:711)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.pentaho.commons.launcher.Launcher.main(Launcher.java:92)
+04-28 18:41:30 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Column "CUSTOEMRNUMBER" not found; SQL statement:
+SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM "PUBLIC"."CUSTOMERS"
+WHERE CUSTOEMRNUMBER = 103 [42122-131]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:316)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:126)
+	at org.h2.expression.Comparison.optimize(Comparison.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:717)
+	at org.h2.command.Parser.prepareCommand(Parser.java:224)
+	at org.h2.engine.Session.prepareLocal(Session.java:420)
+	at org.h2.engine.Session.prepareCommand(Session.java:381)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1070)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:70)
+	at org.pentaho.di.core.database.Database.openQuery(Database.java:1761)
+	at org.pentaho.di.trans.steps.tableinput.TableInput.doQuery(TableInput.java:236)
+	at org.pentaho.di.trans.steps.tableinput.TableInput.processRow(TableInput.java:140)
+	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:62)
+	at java.lang.Thread.run(Thread.java:748)
+04-28 18:42:30 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Column "CUSTOEMRNUMBER" not found; SQL statement:
+SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM "PUBLIC"."CUSTOMERS"
+WHERE CUSTOEMRNUMBER = 103 [42122-131]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:316)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:126)
+	at org.h2.expression.Comparison.optimize(Comparison.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:717)
+	at org.h2.command.Parser.prepareCommand(Parser.java:224)
+	at org.h2.engine.Session.prepareLocal(Session.java:420)
+	at org.h2.engine.Session.prepareCommand(Session.java:381)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1070)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:71)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:233)
+	at org.pentaho.di.core.database.Database.getQueryFieldsFallback(Database.java:2535)
+	at org.pentaho.di.core.database.Database.getQueryFields(Database.java:2416)
+	at org.pentaho.di.trans.steps.tableinput.TableInputMeta.getFields(TableInputMeta.java:267)
+	at org.pentaho.di.trans.TransMeta.getThisStepFields(TransMeta.java:2054)
+	at org.pentaho.di.trans.TransMeta.getStepFields(TransMeta.java:1872)
+	at org.pentaho.di.trans.TransMeta.getStepFields(TransMeta.java:1769)
+	at org.pentaho.di.trans.steps.tableinput.TableInputMeta.updateCachedRowMeta(TableInputMeta.java:340)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog.ok(TableInputDialog.java:566)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog.access$400(TableInputDialog.java:79)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog$12.handleEvent(TableInputDialog.java:417)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog.open(TableInputDialog.java:463)
+	at org.pentaho.di.ui.spoon.delegates.SpoonStepsDelegate.editStep(SpoonStepsDelegate.java:120)
+	at org.pentaho.di.ui.spoon.Spoon.editStep(Spoon.java:8854)
+	at org.pentaho.di.ui.spoon.trans.TransGraph.editStep(TransGraph.java:3287)
+	at org.pentaho.di.ui.spoon.trans.TransGraph.mouseDoubleClick(TransGraph.java:785)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.pentaho.di.ui.spoon.Spoon.readAndDispatch(Spoon.java:1405)
+	at org.pentaho.di.ui.spoon.Spoon.waitForDispose(Spoon.java:7989)
+	at org.pentaho.di.ui.spoon.Spoon.start(Spoon.java:9371)
+	at org.pentaho.di.ui.spoon.Spoon.main(Spoon.java:711)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.pentaho.commons.launcher.Launcher.main(Launcher.java:92)
+04-28 18:42:38 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Column "CUSTOEMRNUMBER" not found; SQL statement:
+SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM "PUBLIC"."CUSTOMERS"
+WHERE CUSTOEMRNUMBER = 103 [42122-131]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:316)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:126)
+	at org.h2.expression.Comparison.optimize(Comparison.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:717)
+	at org.h2.command.Parser.prepareCommand(Parser.java:224)
+	at org.h2.engine.Session.prepareLocal(Session.java:420)
+	at org.h2.engine.Session.prepareCommand(Session.java:381)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1070)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:71)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:233)
+	at org.pentaho.di.core.database.Database.getQueryFieldsFallback(Database.java:2535)
+	at org.pentaho.di.core.database.Database.getQueryFields(Database.java:2416)
+	at org.pentaho.di.trans.steps.tableinput.TableInputMeta.getFields(TableInputMeta.java:267)
+	at org.pentaho.di.trans.TransMeta.getThisStepFields(TransMeta.java:2054)
+	at org.pentaho.di.trans.TransMeta.getStepFields(TransMeta.java:1872)
+	at org.pentaho.di.trans.TransMeta.getStepFields(TransMeta.java:1769)
+	at org.pentaho.di.trans.TransMeta.getStepFields(TransMeta.java:1732)
+	at org.pentaho.di.ui.trans.debug.TransDebugDialog.showStepDebugInformation(TransDebugDialog.java:442)
+	at org.pentaho.di.ui.trans.debug.TransDebugDialog.refreshStepList(TransDebugDialog.java:306)
+	at org.pentaho.di.ui.trans.debug.TransDebugDialog.getData(TransDebugDialog.java:260)
+	at org.pentaho.di.ui.trans.debug.TransDebugDialog.open(TransDebugDialog.java:235)
+	at org.pentaho.di.ui.spoon.delegates.SpoonTransformationDelegate.executeTransformation(SpoonTransformationDelegate.java:826)
+	at org.pentaho.di.ui.spoon.Spoon$28$1.run(Spoon.java:8582)
+	at org.eclipse.swt.widgets.RunnableLock.run(Unknown Source)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.pentaho.di.ui.spoon.Spoon.readAndDispatch(Spoon.java:1405)
+	at org.pentaho.di.ui.spoon.Spoon.waitForDispose(Spoon.java:7989)
+	at org.pentaho.di.ui.spoon.Spoon.start(Spoon.java:9371)
+	at org.pentaho.di.ui.spoon.Spoon.main(Spoon.java:711)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.pentaho.commons.launcher.Launcher.main(Launcher.java:92)
+04-28 18:42:40 jdbc[3]: SQLException
+org.h2.jdbc.JdbcSQLException: Column "CUSTOEMRNUMBER" not found; SQL statement:
+SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM "PUBLIC"."CUSTOMERS"
+WHERE CUSTOEMRNUMBER = 103 [42122-131]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:316)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:126)
+	at org.h2.expression.Comparison.optimize(Comparison.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:717)
+	at org.h2.command.Parser.prepareCommand(Parser.java:224)
+	at org.h2.engine.Session.prepareLocal(Session.java:420)
+	at org.h2.engine.Session.prepareCommand(Session.java:381)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1070)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:71)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:233)
+	at org.pentaho.di.core.database.Database.getQueryFieldsFallback(Database.java:2535)
+	at org.pentaho.di.core.database.Database.getQueryFields(Database.java:2416)
+	at org.pentaho.di.trans.steps.tableinput.TableInputMeta.getFields(TableInputMeta.java:267)
+	at org.pentaho.di.trans.TransMeta.getThisStepFields(TransMeta.java:2054)
+	at org.pentaho.di.trans.TransMeta.getStepFields(TransMeta.java:1872)
+	at org.pentaho.di.trans.TransMeta.getStepFields(TransMeta.java:1769)
+	at org.pentaho.di.trans.TransMeta.getStepFields(TransMeta.java:1732)
+	at org.pentaho.di.ui.spoon.trans.TransPreviewDelegate.capturePreviewData(TransPreviewDelegate.java:471)
+	at org.pentaho.di.ui.spoon.trans.TransGraph.debug(TransGraph.java:4052)
+	at org.pentaho.di.ui.spoon.delegates.SpoonTransformationDelegate.executeTransformation(SpoonTransformationDelegate.java:924)
+	at org.pentaho.di.ui.spoon.Spoon$28$1.run(Spoon.java:8582)
+	at org.eclipse.swt.widgets.RunnableLock.run(Unknown Source)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.pentaho.di.ui.spoon.Spoon.readAndDispatch(Spoon.java:1405)
+	at org.pentaho.di.ui.spoon.Spoon.waitForDispose(Spoon.java:7989)
+	at org.pentaho.di.ui.spoon.Spoon.start(Spoon.java:9371)
+	at org.pentaho.di.ui.spoon.Spoon.main(Spoon.java:711)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.pentaho.commons.launcher.Launcher.main(Launcher.java:92)
+04-28 18:42:40 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Column "CUSTOEMRNUMBER" not found; SQL statement:
+SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM "PUBLIC"."CUSTOMERS"
+WHERE CUSTOEMRNUMBER = 103 [42122-131]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:316)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:126)
+	at org.h2.expression.Comparison.optimize(Comparison.java:144)
+	at org.h2.command.dml.Select.prepare(Select.java:717)
+	at org.h2.command.Parser.prepareCommand(Parser.java:224)
+	at org.h2.engine.Session.prepareLocal(Session.java:420)
+	at org.h2.engine.Session.prepareCommand(Session.java:381)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1070)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:70)
+	at org.pentaho.di.core.database.Database.openQuery(Database.java:1761)
+	at org.pentaho.di.trans.steps.tableinput.TableInput.doQuery(TableInput.java:236)
+	at org.pentaho.di.trans.steps.tableinput.TableInput.processRow(TableInput.java:140)
+	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:62)
+	at java.lang.Thread.run(Thread.java:748)
+04-28 18:45:34 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set [90012-131]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:316)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:73)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:153)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:79)
+	at org.h2.command.Command.executeQuery(Command.java:132)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:76)
+	at org.pentaho.di.core.database.Database.openQuery(Database.java:1761)
+	at org.pentaho.di.trans.steps.tableinput.TableInput.doQuery(TableInput.java:236)
+	at org.pentaho.di.trans.steps.tableinput.TableInput.processRow(TableInput.java:140)
+	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:62)
+	at java.lang.Thread.run(Thread.java:748)
+04-28 18:47:17 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set [90012-131]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:316)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:73)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:153)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:79)
+	at org.h2.command.Command.executeQuery(Command.java:132)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:76)
+	at org.pentaho.di.core.database.Database.openQuery(Database.java:1761)
+	at org.pentaho.di.trans.steps.tableinput.TableInput.doQuery(TableInput.java:236)
+	at org.pentaho.di.trans.steps.tableinput.TableInput.processRow(TableInput.java:140)
+	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:62)
+	at java.lang.Thread.run(Thread.java:748)
+04-28 18:48:09 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set [90012-131]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:316)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:73)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:153)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:79)
+	at org.h2.command.Command.executeQuery(Command.java:132)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:76)
+	at org.pentaho.di.core.database.Database.openQuery(Database.java:1761)
+	at org.pentaho.di.trans.steps.tableinput.TableInput.doQuery(TableInput.java:236)
+	at org.pentaho.di.trans.steps.tableinput.TableInput.processRow(TableInput.java:140)
+	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:62)
+	at java.lang.Thread.run(Thread.java:748)
+04-28 18:50:29 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set [90012-131]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:316)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:73)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:153)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:79)
+	at org.h2.command.Command.executeQuery(Command.java:132)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:96)
+	at org.pentaho.di.core.database.Database.getQueryFieldsFallback(Database.java:2550)
+	at org.pentaho.di.core.database.Database.getQueryFields(Database.java:2416)
+	at org.pentaho.di.trans.steps.tableinput.TableInputMeta.getFields(TableInputMeta.java:267)
+	at org.pentaho.di.trans.TransMeta.getThisStepFields(TransMeta.java:2054)
+	at org.pentaho.di.trans.TransMeta.getStepFields(TransMeta.java:1872)
+	at org.pentaho.di.trans.TransMeta.getStepFields(TransMeta.java:1769)
+	at org.pentaho.di.trans.steps.tableinput.TableInputMeta.updateCachedRowMeta(TableInputMeta.java:340)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog.ok(TableInputDialog.java:566)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog.access$400(TableInputDialog.java:79)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog$12.handleEvent(TableInputDialog.java:417)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog.open(TableInputDialog.java:463)
+	at org.pentaho.di.ui.spoon.delegates.SpoonStepsDelegate.editStep(SpoonStepsDelegate.java:120)
+	at org.pentaho.di.ui.spoon.Spoon.editStep(Spoon.java:8854)
+	at org.pentaho.di.ui.spoon.trans.TransGraph.editStep(TransGraph.java:3287)
+	at org.pentaho.di.ui.spoon.trans.TransGraph.mouseDoubleClick(TransGraph.java:785)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.pentaho.di.ui.spoon.Spoon.readAndDispatch(Spoon.java:1405)
+	at org.pentaho.di.ui.spoon.Spoon.waitForDispose(Spoon.java:7989)
+	at org.pentaho.di.ui.spoon.Spoon.start(Spoon.java:9371)
+	at org.pentaho.di.ui.spoon.Spoon.main(Spoon.java:711)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.pentaho.commons.launcher.Launcher.main(Launcher.java:92)
+04-28 18:50:37 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set [90012-131]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:316)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:73)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:153)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:79)
+	at org.h2.command.Command.executeQuery(Command.java:132)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:96)
+	at org.pentaho.di.core.database.Database.getQueryFieldsFallback(Database.java:2550)
+	at org.pentaho.di.core.database.Database.getQueryFields(Database.java:2416)
+	at org.pentaho.di.trans.steps.tableinput.TableInputMeta.getFields(TableInputMeta.java:267)
+	at org.pentaho.di.trans.TransMeta.getThisStepFields(TransMeta.java:2054)
+	at org.pentaho.di.trans.TransMeta.getStepFields(TransMeta.java:1872)
+	at org.pentaho.di.trans.TransMeta.getStepFields(TransMeta.java:1769)
+	at org.pentaho.di.trans.steps.tableinput.TableInputMeta.updateCachedRowMeta(TableInputMeta.java:340)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog.ok(TableInputDialog.java:566)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog.access$400(TableInputDialog.java:79)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog$12.handleEvent(TableInputDialog.java:417)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog.open(TableInputDialog.java:463)
+	at org.pentaho.di.ui.spoon.delegates.SpoonStepsDelegate.editStep(SpoonStepsDelegate.java:120)
+	at org.pentaho.di.ui.spoon.Spoon.editStep(Spoon.java:8854)
+	at org.pentaho.di.ui.spoon.trans.TransGraph.editStep(TransGraph.java:3287)
+	at org.pentaho.di.ui.spoon.trans.TransGraph.mouseDoubleClick(TransGraph.java:785)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.pentaho.di.ui.spoon.Spoon.readAndDispatch(Spoon.java:1405)
+	at org.pentaho.di.ui.spoon.Spoon.waitForDispose(Spoon.java:7989)
+	at org.pentaho.di.ui.spoon.Spoon.start(Spoon.java:9371)
+	at org.pentaho.di.ui.spoon.Spoon.main(Spoon.java:711)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.pentaho.commons.launcher.Launcher.main(Launcher.java:92)
+04-28 18:52:11 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set [90012-131]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:316)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:73)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:153)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:79)
+	at org.h2.command.Command.executeQuery(Command.java:132)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:76)
+	at org.pentaho.di.core.database.Database.openQuery(Database.java:1761)
+	at org.pentaho.di.trans.steps.tableinput.TableInput.doQuery(TableInput.java:236)
+	at org.pentaho.di.trans.steps.tableinput.TableInput.processRow(TableInput.java:140)
+	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:62)
+	at java.lang.Thread.run(Thread.java:748)
+04-28 18:53:51 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set [90012-131]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:316)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:73)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:153)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:79)
+	at org.h2.command.Command.executeQuery(Command.java:132)
+	at org.h2.jdbc.JdbcPreparedStatement.executeQuery(JdbcPreparedStatement.java:96)
+	at org.pentaho.di.core.database.Database.getQueryFieldsFallback(Database.java:2550)
+	at org.pentaho.di.core.database.Database.getQueryFields(Database.java:2416)
+	at org.pentaho.di.trans.steps.tableinput.TableInputMeta.getFields(TableInputMeta.java:267)
+	at org.pentaho.di.trans.TransMeta.getThisStepFields(TransMeta.java:2054)
+	at org.pentaho.di.trans.TransMeta.getStepFields(TransMeta.java:1872)
+	at org.pentaho.di.trans.TransMeta.getStepFields(TransMeta.java:1769)
+	at org.pentaho.di.trans.steps.tableinput.TableInputMeta.updateCachedRowMeta(TableInputMeta.java:340)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog.ok(TableInputDialog.java:566)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog.access$400(TableInputDialog.java:79)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog$12.handleEvent(TableInputDialog.java:417)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.pentaho.di.ui.trans.steps.tableinput.TableInputDialog.open(TableInputDialog.java:463)
+	at org.pentaho.di.ui.spoon.delegates.SpoonStepsDelegate.editStep(SpoonStepsDelegate.java:120)
+	at org.pentaho.di.ui.spoon.Spoon.editStep(Spoon.java:8854)
+	at org.pentaho.di.ui.spoon.trans.TransGraph.editStep(TransGraph.java:3287)
+	at org.pentaho.di.ui.spoon.trans.TransGraph.mouseDoubleClick(TransGraph.java:785)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(Unknown Source)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Display.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Unknown Source)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Unknown Source)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Unknown Source)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Unknown Source)
+	at org.pentaho.di.ui.spoon.Spoon.readAndDispatch(Spoon.java:1405)
+	at org.pentaho.di.ui.spoon.Spoon.waitForDispose(Spoon.java:7989)
+	at org.pentaho.di.ui.spoon.Spoon.start(Spoon.java:9371)
+	at org.pentaho.di.ui.spoon.Spoon.main(Spoon.java:711)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.pentaho.commons.launcher.Launcher.main(Launcher.java:92)
+04-28 18:54:53 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Parameter "#1" is not set [90012-131]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:316)
+	at org.h2.message.DbException.get(DbException.java:167)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.expression.Parameter.checkSet(Parameter.java:73)
+	at org.h2.command.Prepared.checkParameters(Prepared.java:153)
+	at org.h2.command.CommandContainer.query(CommandContainer.java:79)
+	at org.h2.command.Command.executeQuery(Command.java:132)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:76)
+	at org.pentaho.di.core.database.Database.openQuery(Database.java:1761)
+	at org.pentaho.di.trans.steps.tableinput.TableInput.doQuery(TableInput.java:236)
+	at org.pentaho.di.trans.steps.tableinput.TableInput.processRow(TableInput.java:140)
+	at org.pentaho.di.trans.step.RunThread.run(RunThread.java:62)
+	at java.lang.Thread.run(Thread.java:748)
+04-28 19:02:05 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:02:05 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:02:05 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:02:06 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:02:45 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:02:45 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:02:45 jdbc[4]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:02:45 jdbc[5]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:02:45 jdbc[3]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:02:45 jdbc[6]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:02:45 jdbc[7]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:02:57 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:03:31 jdbc[4]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:03:31 jdbc[5]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:03:31 jdbc[3]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:03:31 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:03:31 jdbc[6]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:03:31 jdbc[7]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:03:31 jdbc[8]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:03:56 jdbc[3]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:03:56 jdbc[4]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:03:56 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:06:36 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:06:45 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:06:58 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:06:58 jdbc[4]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:06:58 jdbc[5]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:06:58 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:06:58 jdbc[3]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:06:58 jdbc[6]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:06:58 jdbc[7]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:07:07 jdbc[3]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:07:07 jdbc[4]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:07:07 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:07:33 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:09:12 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:09:40 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:09:40 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = ${pCUSTOMERNUMBER}
+" [42000-131]
+04-28 19:10:27 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = 103,[*]114
+"; SQL statement:
+SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM "PUBLIC"."CUSTOMERS"
+WHERE CUSTOMERNUMBER = 103,114
+ [42000-131]
+05-23 13:29:52 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = 
+"; expected "ALL, ANY, SOME"; SQL statement:
+SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM "PUBLIC"."CUSTOMERS"
+WHERE CUSTOMERNUMBER = 
+ [42001-131]
+05-23 13:29:52 jdbc[2]: SQLException
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM ""PUBLIC"".""CUSTOMERS""
+WHERE CUSTOMERNUMBER = 
+"; expected "ALL, ANY, SOME"; SQL statement:
+SELECT
+  CUSTOMERNUMBER
+, CUSTOMERNAME
+, CONTACTLASTNAME
+, CONTACTFIRSTNAME
+, PHONE
+, ADDRESSLINE1
+, ADDRESSLINE2
+, CITY
+, STATE
+, POSTALCODE
+, COUNTRY
+, SALESREPEMPLOYEENUMBER
+, CREDITLIMIT
+FROM "PUBLIC"."CUSTOMERS"
+WHERE CUSTOMERNUMBER = 
+ [42001-131]
